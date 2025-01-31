@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .cointainer2{
+        width: 60%;
+        height: 70vh;
+        background:linear-gradient(skyblue,lightblue);
+        text-align: center;
+        border: 1px solid black;
+       
+    }
+    .studata{
+        width: 100%;
+        margin-top: 30px; ;
+        text-align: center;
+
+        
+    }
+    input[type="text"]{
+        margin-top: 5px;
+        border: none;
+        outline: none;
+        width: 50%;
+        height: 30px;
+    }
+    input[type="submit"]{
+        margin-top: 5px;
+        width: 100px;
+        height: 30px;
+        border: none;
+        background-color: green;
+        color: white;
+    }
+   
+</style>
+<body>
+<form action="read" method="post">
+    {% csrf_token %}
+    <div class="container">
+        <div class="cointainer2">
+            <h1>STUDENT SCORE VALIDATOR</h1>
+            <div class="studata">
+                <label for="">NAME:</label>
+                <input type="text" id="name" name="name"  value="{{name}}" placeholder="Enter your name"><br>
+                <label for="">PYTHON:</label>
+                <input type="text" id="python" name="python" value="{{python}}" placeholder="Enter your python score"><br>
+                <label for="">JAVA:</label>
+                <input type="text" id="java" name="java" value="{{java}}" placeholder="Enter your java score"><br>
+                <label for="">MYSQL:</label>
+                <input type="text" id="mysql" name="mysql" value="{{mysql}}" placeholder="Enter your mysql score"><br>
+                <label for="">HTML:</label>
+                <input type="text" id="html" name="html" value="{{html}}" placeholder="Enter your html score"><br>
+                <label for="">DJANGO:</label>
+                <input type="text" id="django" name="django" value="{{django}}" placeholder="Enter your django score"><br>
+                <input type="submit" name="operation"  value="TOTAL">
+                <input type="submit" name="operation" value="AVERAGE">
+                <input type="submit" name="operation" value="GRADE">
+                <input type="submit" name="operation" value="STATUS"><br>
+                
+                <input type="text"  value="{{result}}" placeholder="Get the result" ><br>
+            </div>
+        </div>
+
+    </div>
+</form>
+</body>
+</html>
